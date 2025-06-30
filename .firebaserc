@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "epi-manager-klc2m",
+    "s": "epi-manager-klc2m",
+    "epi-manager": "epi-manager-klc2m"
+  },
+  "targets": {},
+  "etags": {}
+}
