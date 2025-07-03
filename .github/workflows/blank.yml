@@ -1,0 +1,57 @@
+name: Epimanager CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    # Continue mesmo se uma versão do Node falhar
+    continue-on-error: false
+    
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        # Executa jobs em paralelo (não cancela outros se um falhar)
+        fail-fast: false
+        
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Generate lock file
+      run: npm install --package-lock-only
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
