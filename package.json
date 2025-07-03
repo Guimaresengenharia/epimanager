@@ -1,0 +1,20 @@
+{
+  "name": "epimanager",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && vite dev --port 3000",
+    "build": "cd frontend && vite build",
+    "preview": "vite preview --port 3001",
+    "predeploy": "npm run build",
+    "deploy": "firebase deploy --only hosting",
+    "deploy:all": "firebase deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "firebase": "^10.11.1"
+  },
+  "devDependencies": {
+    "vite": "^5.1.0"
+  }
+}
