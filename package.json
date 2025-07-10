@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "cd frontend && vite dev --port 3000",
-    "build": "cd frontend && vite build",
+    "dev": "vite dev --port 3000",          
+    "build": "vite build",                  
     "preview": "vite preview --port 3001",
     "predeploy": "npm run build",
     "deploy": "firebase deploy --only hosting",
