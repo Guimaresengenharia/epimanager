@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
-// import vue from '@vitejs/plugin-vue' // REMOVA se não estiver usando Vue
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  // plugins: [vue()], // REMOVA se não estiver usando Vue
+  plugins: [vue()],
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    emptyOutDir: true
   }
 })
