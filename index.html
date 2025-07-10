@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epimanager | Gestão de EPIs</title>
+  
+  <!-- Favicon (adicione seu ícone na pasta /public) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  <!-- Meta Tags para SEO -->
+  <meta name="description" content="Sistema de gestão de EPIs para sua empresa">
+  
+  <!-- Pré-carregamento do CSS/JS (melhora performance) -->
+  <link rel="modulepreload" href="/src/main.js">
+  
+  <!-- Estilos iniciais (evita "flash" sem estilo) -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fa;
+    }
+    #app {
+      min-height: 100vh;
+    }
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Tela de carregamento (aparece antes do Vue/React carregar) -->
+    <div class="loading">
+      <img src="/logo.svg" alt="Epimanager" width="200">
+    </div>
+  </div>
+  
+  <!-- Script principal do Vite -->
+  <script type="module" src="/src/main.js"></script>
+  
+  <!-- Configuração Firebase (opcional) -->
+  <script>
+    if (window.location.hostname === 'studio--epi-manager-klc2m.us-central1.hosted.app') {
+      window.location.href = 'https://epi-manager-klc2m.web.app';
+    }
+  </script>
+</body>
+</html>
