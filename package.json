@@ -2,6 +2,7 @@
   "name": "epimanager",
   "version": "1.0.0",
   "private": true,
+  "type": "module",  // ← Adicione esta linha
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,9 +13,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "firebase": "^10.11.1"
+    "firebase": "^10.11.1",
+    "vue": "^3.4.21"  // ← Adicione se estiver usando Vue
   },
   "devDependencies": {
-    "vite": "^5.1.0"
+    "vite": "^5.1.0",
+    "@vitejs/plugin-vue": "^5.0.4"  // ← Adicione se estiver usando Vue
   }
 }
